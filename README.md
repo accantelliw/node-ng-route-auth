@@ -21,10 +21,6 @@ Install *NPM*, *NodeJS* and *Bower*. Optionally, *Grunt*.
 
 Download from Git
 
-~~~
-bower install purecloud-api
-~~~
-
     mkdir node-ng-route-auth
     cd node-ng-route-auth
     git clone https://github.com/accantelliw/node-ng-route-auth
@@ -41,11 +37,49 @@ Open ``` http://localhost:5000 ```
 
 ### Backend
 
-Backend exposes sample
+Backend is a NodeJS (+Express) application with:
+
+* Basic user/Roles management
+* JWT Access token management (HTTP requests need to have x-access-token header)
+* Secured API to be displayed on fronted side
+Application data is stored directly in JSON object, database was intentionally not included in this project. 
+
+You can test API with Postman.
+
+Structure:
+
+	app\routes.js               --> express middleware routes
+	app\controllers\authCtrl.js --> authentication controller
+	app\controllers\dataCtrl.js --> API data controller
+	app\helpers\tokenHandler.js --> JWT token management
+	app\models\data.js          --> API data store management
+	app\models\users.js         --> Users/roles management
+	app\utils\common.js         --> Common JSON HTTP response models
+	app\utils\utils.js          --> Utilities
 
 ### Frontend
 
-Backend exposes sample
+Frontend is an Angular SPA (including angular route) with:
+
+* Login page
+* Authentication/Authorization pages check
+* User profile page
+
+User data is stored in local storage (see public\scripts\services\userData.js).
+
+Structure:
+
+	public\scripts\app.js                       --> Angular app, routes and configuration
+	public\scripts\directives.js                --> Directive to fix <a href> issue
+	public\scripts\controllers\AppController.js --> Main global controller, handles auth notifications
+	public\scripts\controllers\*Controller.js   --> One controller for each page/view
+	public\scripts\services\authInterceptor.js  --> Check authentication on each HTTP requests
+	public\scripts\services\authService.js      --> Auth API
+	public\scripts\services\apiService.js       --> Data API
+	public\scripts\services\userData.js         --> user data manangement (session store)
+	public\scripts\common\utils.js              --> utilities
+	public\index.html                           --> main page
+	public\views\*.html                         --> page views 
 
 
 ## 4. Other
@@ -64,7 +98,7 @@ Backend exposes sample
 
 ### TODO
 
-* Make the application grunt.
+* Make the application grunt!
 
 ### FUTURE
 
