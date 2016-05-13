@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app="ngMainApp">
+<head>
+  <meta charset="utf-8">
+  <title>Angular App</title>
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css"/>
+  <link rel="stylesheet" href="layout/app.css"/>
+</head>
+<body ng-controller="AppController as appCtrl">
+
+  <div id="wrap">
+
+  <div class="container">
+    <div ng-if='isAuthenticated()' ng-include="'views/navbar.html'"></div>
+    <div ng-view></div>
+  </div>
+
+  </div><!-- /wrap -->
+
+  <div id="footer" ng-include="'views/footer.html'"></div>  
+
+  <!-- vendor libs -->
+  <script src="jquery/dist/jquery.min.js"></script>
+  <script src="angular/angular.min.js"></script>
+  <script src="angular-route/angular-route.min.js"></script>
+  <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- custom -->
+  <script src="scripts/common/utils.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/directives.js"></script>
+  <script src="scripts/services/userData.js"></script>
+  <script src="scripts/services/apiService.js"></script>
+  <script src="scripts/services/authInterceptor.js"></script>
+  <script src="scripts/services/authService.js"></script>
+  <script src="scripts/controllers/AppController.js"></script>
+  <script src="scripts/controllers/LoginController.js"></script>
+  <script src="scripts/controllers/HomeController.js"></script>
+  <script src="scripts/controllers/Page1Controller.js"></script>
+  <script src="scripts/controllers/Page2Controller.js"></script>
+  <script src="scripts/controllers/Page3Controller.js"></script>
+  <script src="scripts/controllers/PageProfileController.js"></script>
+
+</body>
+</html>

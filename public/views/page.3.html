@@ -1,0 +1,18 @@
+<h3>This is Page3</h3>
+
+<p>If you can see this page, you are an Administrator.</p>
+<br>
+<br>
+
+<div class="row">
+
+	<div class="col-md-12">
+		<p>Total number of Quotes: <strong>{{data.numQuotes}}</strong></p>
+	</div>	
+
+	<div ng-repeat="d in data.typeQuotes" class="col-md-12">
+		<header></header>
+		<p>Number of <strong>{{d.type}}</strong> quotes: <strong>{{d.count}}</strong></p>
+	</div>	
+
+</div>

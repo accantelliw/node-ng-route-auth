@@ -1,0 +1,31 @@
+html, body {
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+.error {
+  background-color: #fff;
+  font-style: italic;
+  color: red;
+}
+
+a[ng-click]{
+    cursor: pointer;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+#login {
+  margin-top: 15px;
+}
+
+#footer {
+  margin-top: 20px;
+  padding-top: 5px;
+  border-top: 1px solid gray;
+}

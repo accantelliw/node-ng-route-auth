@@ -1,0 +1,24 @@
+<h3>This is the homepage</h3>
+
+<p>This data has been gathered from API, using JWT token.</p>
+
+<table class="table table-striped" >
+<thead>
+  <tr>
+    <th>id</th>
+    <th>author</th>
+    <th>quote</th>
+    <th>type</th>
+  </tr>
+</thead>
+<tbody>
+  <tr ng-repeat="d in data">
+    <td>{{d.id}}</td>
+    <td>{{d.author}}</td>
+    <td>{{d.quote}}</td>
+    <td>{{d.type}}</td>
+  </tr>
+</tbody>
+</table>
+
+
